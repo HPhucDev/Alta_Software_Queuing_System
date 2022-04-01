@@ -32,10 +32,11 @@ export const setLoading = (value: boolean): ThunkAction<void, RootState, null, A
 }
 
 // Log in
-export const signin = (data: SignInData, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
+export const signin = (data: SignInData,onSuccess:()=>void, onError: () => void): ThunkAction<void, RootState, null, AuthAction> => {
   return async dispatch => {
     try {
       await firebase.auth().signInWithEmailAndPassword(data.email, data.password);
+      onSuccess();
       console.log("done");
     } catch (err) {
       console.log(err);

@@ -9,6 +9,30 @@
         max-width: 400px;
         justify-content: center;
         align-items: center;
+        &--fail{
+            width: 233px;
+            height:21px;
+            margin-top: 42px;
+            &-hiden{
+                 @extend .login__form--fail;
+                opacity:0;
+            }
+            &-title{
+                position:relative;
+                color:#E73F3F;
+                font-family: $font--family;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                margin-left:5.5px;
+            }
+            &-icon{
+                color:#E73F3F;
+                width: 17px;
+                height:17px;
+            }
+        }
         &--username{
             &-title{
                 margin-top: 4px;
@@ -38,6 +62,7 @@
                 line-height: 27px;
                 padding: 10px 12px 10px 12px;
             }
+           
         }
         &--password{
                 &-title{
@@ -71,14 +96,15 @@
                         font-weight: 400;
                         font-size: 18px;
                         line-height: 27px;
-                        
                     }
                     & svg{
                         position:absolute;
                         margin:0px 13.66px 13.66px 369.36px;
                         width:16.67px;
                         height:16.67px;
+                        color:#7E7D88;
                     }
+                    
                 }
                 &-forgot{
                     & button{
@@ -106,7 +132,7 @@
             border-radius: 8px;
             border:none;
             cursor:pointer;
-            margin-top:87px;
+            margin-top:24px;
             margin-left:120px;
             &:hover{
                 background: #FF7506;
@@ -125,7 +151,12 @@
         
        
     }
-   
-    
-    
+}
+.error{
+    border: 1.5px solid #E73F3F;
+}
+.errorpassword{
+    & input{
+        border: 1.5px solid #E73F3F;
+    }
 }

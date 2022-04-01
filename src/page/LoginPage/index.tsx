@@ -1,6 +1,6 @@
 import * as React from 'react';
 import "./style.scss";
-import {Login,ForgotPassword,ResetPassword} from '../../components';
+import {Login,ForgotPassword,ResetPassword,Loading} from '../../components';
 
 export interface ILoginPageProps {
 }
@@ -14,6 +14,7 @@ export function LoginPage (props: ILoginPageProps) {
               src={require('../../configs/images/LogoAlta.png')}
               className="loginpage__container--left-logo"
               alt="Logo"/>
+              {/* <Loading/> */}
                 <Login/>
                 {/* <ForgotPassword/>
                 <ResetPassword/> */}
