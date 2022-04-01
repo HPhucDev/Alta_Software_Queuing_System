@@ -1,9 +1,11 @@
-import * as React from 'react';
+import  React  ,{useState, FormEvent,useEffect } from 'react';
 import './style.scss';
+import { useDispatch, useSelector } from 'react-redux';
 import {  Form, Input, Button} from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import { useForm } from 'react-hook-form';
-import {yupResolver} from "@hookform/resolvers/yup";
+import { RootState } from '../../../configs/redux';
+import { signin, setError } from '../../../configs/redux/actions/authAction';
+
 export interface ILoginProps {
 }
 type LoginProp = {
@@ -12,10 +14,27 @@ type LoginProp = {
 }
 
 export function Login (props: ILoginProps) {
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
+  const [account, setAccount] = useState ('');
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { error } = useSelector((state: RootState) => state.auth);
 
+  useEffect(() => {
+    return () => {
+      if(error) {
+        dispatch(setError(''));
+      }
+    }
+  }, [error, dispatch]);
+  const onFinish = (values: any) => {
+    setAccount(values);
+    const {email,password}=values;
+    if(error) {
+      dispatch(setError(''));
+    }
+    setLoading(true);
+    dispatch(signin({email,password}, () => setLoading(false)));
+  };
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
@@ -33,7 +52,7 @@ export function Login (props: ILoginProps) {
         >
             <Form.Item
               label="Tên đăng nhập *"
-              name="username"
+              name="email"
               className="login__form--username-title" 
             >
               <Input className="login__form--username-input" />
