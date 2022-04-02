@@ -3,9 +3,13 @@ import './style.scss';
 import {  Form, Input, Button} from 'antd';
 
 export interface IForgotPasswordProps {
+  onClickCancleForgotPassword:()=>void
+  onClickCountinueForgotPassword:()=>void
 }
 
 export function ForgotPassword (props: IForgotPasswordProps) {
+  const onClickCancleForgotPassword=props.onClickCancleForgotPassword;
+  const onClickCountinueForgotPassword=props.onClickCountinueForgotPassword;
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
@@ -35,10 +39,16 @@ export function ForgotPassword (props: IForgotPasswordProps) {
             </Form.Item>
 
             <Form.Item wrapperCol={{ offset: 8, span: 16 }} className="login__form--tool">
-              <Button type="primary" htmlType="submit" className="login__form--tool-cancel">
+              <Button type="primary" htmlType="submit" 
+                      className="login__form--tool-cancel"
+                      onClick={onClickCancleForgotPassword}
+               >
                 Huỷ
               </Button>
-              <Button type="primary" htmlType="submit" className="login__form--tool-submit">
+              <Button type="primary" htmlType="submit" 
+                      className="login__form--tool-submit"
+                      onClick={onClickCountinueForgotPassword}
+              >
                 Tiếp tục
               </Button>
             </Form.Item>

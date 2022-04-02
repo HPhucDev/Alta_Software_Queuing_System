@@ -8,13 +8,16 @@ import { signin, setError } from '../../../configs/redux/actions/authAction';
 import classnames from 'classnames';
 
 export interface ILoginProps {
+  onClickForgotPassword:()=>void
 }
 type LoginProp = {
   username:string;
   password:string;
 }
 
+
 export function Login (props: ILoginProps) {
+  const onClickForgotPassword = props.onClickForgotPassword;
   const [account, setAccount] = useState ('');
   const [loading, setLoading] = useState(false);
   const [fail, setFail] = useState ('');
@@ -87,12 +90,16 @@ export function Login (props: ILoginProps) {
                </div>
               ):<div className="login__form--fail-hiden"></div>}
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button type="primary" htmlType="submit" className="login__form--submit">
-                Đăng nhập
+              <Button  type="primary" htmlType="submit" disabled={loading} className="login__form--submit">
+              {loading ? "Loading..." : "Sign In"}
               </Button>
             </Form.Item>
             <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-              <Button type="text" className="login__form--password-forgot"  >Quên mật khẩu? </Button>
+              <Button type="text" 
+                      className="login__form--password-forgot" 
+                      onClick={onClickForgotPassword}>
+                      Quên mật khẩu? 
+              </Button>
             </Form.Item>
         </Form>
     </div>

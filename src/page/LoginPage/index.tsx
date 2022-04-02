@@ -1,11 +1,21 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import "./style.scss";
 import {Login,ForgotPassword,ResetPassword,Loading} from '../../components';
-
+import { useNavigate, Link } from 'react-router-dom';
 export interface ILoginPageProps {
 }
 
 export function LoginPage (props: ILoginPageProps) {
+  const [forgot,setForgot]= useState('false');
+  const onClickForgotPassword=()=>{
+      setForgot("true");
+  }
+  const onClickCancleForgotPassword=()=>{
+      setForgot("false");
+  }
+  const onClickCountinueForgotPassword=()=>{
+      setForgot("next");
+  }
   return (
     <div className="loginpage__panel">
         <div className="loginpage__container" >
@@ -15,9 +25,10 @@ export function LoginPage (props: ILoginPageProps) {
               className="loginpage__container--left-logo"
               alt="Logo"/>
               {/* <Loading/> */}
-                <Login/>
-                {/* <ForgotPassword/>
-                <ResetPassword/> */}
+                {forgot==="true"? <ForgotPassword  onClickCancleForgotPassword={onClickCancleForgotPassword} 
+                                                   onClickCountinueForgotPassword={onClickCountinueForgotPassword}/>:""}
+                {forgot==="false"?<Login onClickForgotPassword={ onClickForgotPassword}/>:""}
+                {forgot==="next"?<ResetPassword/>:""}
             </section>
             <section className="loginpage__container--right" >
               <div className="loginpage__container--right-login">
