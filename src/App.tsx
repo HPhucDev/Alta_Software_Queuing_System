@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
-import { LoginPage } from './page';
+import { LoginPage,Dashboard } from './page';
 import { ForgotPassword, Login, ResetPassword } from './components';
 
 function App() {

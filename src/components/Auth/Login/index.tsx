@@ -8,7 +8,8 @@ import { signin, setError } from '../../../configs/redux/actions/authAction';
 import classnames from 'classnames';
 
 export interface ILoginProps {
-  onClickForgotPassword:()=>void
+  onClickForgotPassword:()=>void,
+  successLogin:()=>void
 }
 type LoginProp = {
   username:string;
@@ -18,6 +19,7 @@ type LoginProp = {
 
 export function Login (props: ILoginProps) {
   const onClickForgotPassword = props.onClickForgotPassword;
+  const successLogin = props.successLogin;
   const [account, setAccount] = useState ('');
   const [loading, setLoading] = useState(false);
   const [fail, setFail] = useState ('');
@@ -41,7 +43,7 @@ export function Login (props: ILoginProps) {
     }
     setLoading(true);
     dispatch(signin({email,password},
-                           ()=>{setFail("false");},
+                           ()=>{setFail("false");successLogin();},
                            () => { setLoading(false); setFail("true");}));
     
   };

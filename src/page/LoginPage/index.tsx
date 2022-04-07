@@ -2,11 +2,13 @@ import React,{useState} from 'react';
 import "./style.scss";
 import {Login,ForgotPassword,ResetPassword,Loading} from '../../components';
 import { useNavigate, Link } from 'react-router-dom';
+import {Dashboard} from "../index";
 export interface ILoginPageProps {
 }
 
 export function LoginPage (props: ILoginPageProps) {
   const [forgot,setForgot]= useState('false');
+  const [success,setSuccess]= useState('false');
   const onClickForgotPassword=()=>{
       setForgot("true");
   }
@@ -15,6 +17,9 @@ export function LoginPage (props: ILoginPageProps) {
   }
   const onClickCountinueForgotPassword=()=>{
       setForgot("next");
+  }
+  const successLogin=()=>{
+    setSuccess("true");
   }
   return (
     <div className="loginpage__panel">
@@ -27,8 +32,9 @@ export function LoginPage (props: ILoginPageProps) {
               {/* <Loading/> */}
                 {forgot==="true"? <ForgotPassword  onClickCancleForgotPassword={onClickCancleForgotPassword} 
                                                    onClickCountinueForgotPassword={onClickCountinueForgotPassword}/>:""}
-                {forgot==="false"?<Login onClickForgotPassword={ onClickForgotPassword}/>:""}
+                {forgot==="false"?<Login successLogin={successLogin} onClickForgotPassword={ onClickForgotPassword}/>:""}
                 {forgot==="next"?<ResetPassword/>:""}
+                {success ==="true"?<Dashboard/>:""}
             </section>
             <section className="loginpage__container--right" >
             {forgot==="false"?(
