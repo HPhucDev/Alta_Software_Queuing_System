@@ -3,6 +3,7 @@ import * as React from 'react';
 import "./style.scss";
 
 export interface IMenuBarProps {
+  dashboardClick:()=>void,
 }
 
 export function MenuBar (props: IMenuBarProps) {
@@ -17,7 +18,7 @@ export function MenuBar (props: IMenuBarProps) {
               alt="Logo"/>
         </div>
         <div className="menubar__content">
-            <Button className="menubar__content--button">
+            <Button className="menubar__content--button" onClick={props.dashboardClick}>
               <img className="menubar__content--button-img"
                   src={require('../../configs/icons/dashboard.png')} alt="dashboard"/>
               Dashboard
@@ -42,7 +43,7 @@ export function MenuBar (props: IMenuBarProps) {
                     src={require('../../configs/icons/report.png')} alt="report"/>
               Báo cáo
             </Button> 
-            <div className="menubar__content--button-dropdown " >
+            <div className="menubar__content--button-dropdown" >
               <Button className="menubar__content--button ">
                 <img className="menubar__content--button-img"
                       src={require('../../configs/icons/setting.png')} alt="setting"/>
@@ -56,7 +57,8 @@ export function MenuBar (props: IMenuBarProps) {
                 <a className="menubar__content--button-dropdown-list-item-bottom">Nhật kí người dùng</a>
               </div>
             </div>
-
+            
+           
         </div>
         <div className="menubar__footer">
             <Button className="menubar__content--button">

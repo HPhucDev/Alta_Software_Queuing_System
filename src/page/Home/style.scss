@@ -1,5 +1,5 @@
 @import "/src/style/app.scss";
-.dashboard{
+.home{
     &__panel{
         position:relative;
         display: block;
@@ -28,11 +28,14 @@
                 width:  calc(1440px - 200px);
                 height:88px;
                 border-top-right-radius: $border--radius;
+                z-index: 1;
+                position: absolute;
 
             }
           
             &-content{
-    
+                z-index: 0;
+                position: absolute;
             }
         }
 

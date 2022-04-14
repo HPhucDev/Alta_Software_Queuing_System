@@ -2,6 +2,7 @@ import { ThunkAction } from 'redux-thunk';
 import { AuthAction, SET_USER, User, SET_LOADING, SIGN_OUT, SignInData, SET_ERROR, SET_SUCCESS } from '../types/authType'
 import { RootState } from '..';
 import firebase from '../../firebase/config';
+import { Loading } from '../../../components';
 
 // Get user by id
 export const getUserById = (id: string): ThunkAction<void, RootState, null, AuthAction> => {
