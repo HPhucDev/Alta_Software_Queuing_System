@@ -11,15 +11,14 @@ export function Home (props: IHomeProps) {
     const [dashboard,setDashboard]= useState(false);
     const [userDetail,setUserDetail]= useState(false);
     const dashboardOnClick=()=>{
-        setUserDetail(!userDetail)
-        setDashboard(!dashboard)
+        setUserDetail(false)
+        setDashboard(true)
 
     }
     const userDetailOnClick=()=>{
 
-        setUserDetail(!userDetail)
-        setDashboard(!dashboard)
-        
+        setUserDetail(true)
+        setDashboard(false)
     }
   return (
     <div className="home__panel">
@@ -29,8 +28,11 @@ export function Home (props: IHomeProps) {
             </div>
             <div className="home__container--right" >
                 <div className="home__container--right-header" >
-                    {userDetail? <Header userDetailOnClick={userDetailOnClick} title="Thông tin cá nhân" name="Nguyễn Hoàng Phúc" avatar={urlImage}/>:""}
-                    {dashboard ? <Header userDetailOnClick={userDetailOnClick} title="Dashboard" name="Nguyễn Hoàng Phúc" avatar={urlImage}/>:""}
+                    {(userDetail === false && dashboard === false )?<Header userDetailOnClick={userDetailOnClick} title="" name="Nguyễn Hoàng Phúc" avatar={urlImage}/>:""}
+                    {userDetail? <Header userDetailOnClick={userDetailOnClick} title="Thông tin cá nhân" name="Nguyễn Hoàng Phúc" avatar={urlImage}/>
+                                :""}
+                    {dashboard ? <Header userDetailOnClick={userDetailOnClick} title="Dashboard" name="Nguyễn Hoàng Phúc" avatar={urlImage}/>
+                                :""}
                 </div>   
                 <div className="home__container--right-content" >
                     {userDetail? <UserDetail />:""}
