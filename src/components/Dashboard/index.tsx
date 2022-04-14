@@ -224,7 +224,7 @@ export function Dashboard (props: IDashboardProps) {
                        item2Count={422} item2Title={"Ngưng hoạt động"} item2Color={"#7E7D88"}/>
             <ModelCard percent={76} percentBigColor={"#4277FF"} percentSmallColor={"#7E7D88"}
                       icon={"service"} count={276} title={"Dịch vụ"} mainColor={"#4277FF"}
-                      iconColor={" invert(44%) sepia(86%) saturate(3412%) hue-rotate(211deg) brightness(101%) contrast(101)"}
+                      iconColor={"invert(48%) sepia(69%) saturate(4951%) hue-rotate(212deg) brightness(102%) contrast(102%)"}
                         item1Count={210} item1Title={"Đang hoạt động"} item1Color={"#4277FF"} 
                         item2Count={66} item2Title={"Ngưng hoạt động"} item2Color={"#7E7D88"}/>
             <ModelCardCustom percent={86} percent1={11.5} percentBigColor={"#35C75A"} percentSmallColor={"#7E7D88"}         

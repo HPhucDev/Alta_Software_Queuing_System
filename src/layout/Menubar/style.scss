@@ -40,6 +40,7 @@
                     justify-content:left;
                 }
                 &-list{
+                    z-index: 5;
                     visibility: hidden;
                     display: none;
                     position:absolute;

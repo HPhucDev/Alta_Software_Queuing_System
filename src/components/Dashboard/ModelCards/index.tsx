@@ -53,7 +53,9 @@ export function ModelCard (props: IModelCardProps) {
           <CircularProgressbar className='modelcard__left--chart-big' 
                                 value={percent} text={`${percent}%`} 
                                 strokeWidth={5}
-                                styles={buildStyles({pathColor: `${percentBigColor}`,trailColor: '#EAEAEC',textColor:"#535261"})} />
+                                styles={{path:{stroke:`${percentBigColor}`},
+                                        trail:{stroke:'#EAEAEC'},
+                                        text:{stroke:"#535261",fontFamily: 'Nunito',fontSize:'18px',lineHeight:'24px',fontWeight:'700',fontStyle:'normal'}}} />
           <CircularProgressbar className='modelcard__left--chart-small' 
                                 value={100-percent}  
                                 strokeWidth={5}
