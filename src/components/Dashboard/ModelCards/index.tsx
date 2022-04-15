@@ -41,7 +41,6 @@ export function ModelCard (props: IModelCardProps) {
   const item1Title= props.item1Title;
   const item1Color= {color : `${props.item1Color}`};
          
-
   const item2Count= props.item2Count;
   const item2Title= props.item2Title;
   const item2Color= {color : `${props.item2Color}`};

@@ -1,20 +1,37 @@
 import * as React from 'react';
 import "./style.scss";
+import {useNavigate,useLocation} from 'react-router-dom';
+import classnames from 'classnames';
 export interface IHeaderProps {
   title:string,
+  children:string,
+  children2:string,
   name:string,
   avatar:string,
-  userDetailOnClick:()=>void,
 }
 
 export function Header (props: IHeaderProps) {
+  const nav = useNavigate();
+  const location = useLocation();
   const title = props.title;
+  const children = props.children;
+  const children2 = props.children2;
   const urlAvatar= props.avatar;
   const userName = props.name;
+
+  const handleOnClick=()=>{
+    nav("/home/userdetail");
+  }
+  const path = location.pathname.length;
+  console.log(path);
   return (
     <header className = "header">
         <section className = "header__left">
-            <span className = "header__left--title">{title}</span>
+            <span className={classnames({
+                  "header__left--title":true,
+                   deactive: (path  !== 15 )})}>{title}</span>
+            <span className = "header__left--title-children">{children}</span>
+            <span className = "header__left--title-children">{children2}</span>
         </section>
         <section className = "header__right">
             <button className = "header__right--noti">
@@ -23,7 +40,7 @@ export function Header (props: IHeaderProps) {
                   className = "header__right--noti-img"
                   alt="Noti"/>
             </button>
-            <button className = "header__right--account" onClick={props.userDetailOnClick}>
+            <button className = "header__right--account" onClick={handleOnClick}>
               <div className = "header__right--account-avatar">
                 <img 
                     src={require('../../configs/images/avatar.png')}

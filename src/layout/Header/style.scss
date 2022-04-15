@@ -6,6 +6,7 @@
     &__left{
         width:839px;
         height:100%;
+        display: flex;
         &--title{
             display:block;
             margin:29px 0px 29px 24px;
@@ -15,6 +16,16 @@
             font-size: 20px;
             line-height: 30px;
             color: #FF9138;
+            &-children{
+                display: block;
+                margin:29px 0px 29px 24px;
+                font-family: $font--family;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                color: #FF9138;
+            }
         }
     }
     &__right{
@@ -86,4 +97,7 @@
             }
         }
     }
+}
+.deactive{
+    color: #7E7D88;
 }

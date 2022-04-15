@@ -1,14 +1,37 @@
 import { Button,Menu } from 'antd';
-import * as React from 'react';
+import React,{useState} from 'react';
 import "./style.scss";
+import classnames from 'classnames';
+import { useLocation,Link } from 'react-router-dom';
 
 export interface IMenuBarProps {
-  dashboardClick:()=>void,
 }
 
 export function MenuBar (props: IMenuBarProps) {
-  const itemsSettingList=[{id:1,title:"hello",href:"1"},{id:2,title:"chao",href:"2"},{id:3,title:"bye",href:"3"},];
-
+  const location = useLocation();
+  const dataMenu = [
+    {   path : "/home/dashboard",
+        title: "Dashboard", 
+        icon : "dashboard.png"
+    },
+    {   path : "/home/device",
+        title: "Thiết bị", 
+        icon : "device.png"
+    },
+    {   path : "/home/service",
+        title: "Dịch vụ", 
+        icon : "service.png"
+    },
+    {   path : "/home/number",
+        title: "Cấp số", 
+        icon : "number.png"
+    },
+    {   path : "/home/report",
+        title: "Báo cáo", 
+        icon : "report.png"
+    }
+]
+const path = location.pathname.slice(0, 13);
   return (
     <div className="menubar">
         <div className="menubar__header">
@@ -18,43 +41,41 @@ export function MenuBar (props: IMenuBarProps) {
               alt="Logo"/>
         </div>
         <div className="menubar__content">
-            <Button className="menubar__content--button" onClick={props.dashboardClick}>
-              <img className="menubar__content--button-img"
-                  src={require('../../configs/icons/dashboard.png')} alt="dashboard"/>
-              Dashboard
-            </Button>
-            <Button className="menubar__content--button">
-              <img className="menubar__content--button-img"
-                  src={require('../../configs/icons/device.png')} alt="device"/>
-              Thiết bị
-            </Button>
-            <Button className="menubar__content--button">
-              <img className="menubar__content--button-img"
-                    src={require('../../configs/icons/service.png')} alt="service"/>
-              Dịch vụ
-            </Button>
-            <Button className="menubar__content--button ">
-              <img className="menubar__content--button-img"
-                    src={require('../../configs/icons/number.png')} alt="number"/>
-              Cấp số
-            </Button>
-            <Button className="menubar__content--button">
-              <img className="menubar__content--button-img"
-                    src={require('../../configs/icons/report.png')} alt="report"/>
-              Báo cáo
-            </Button> 
+            {dataMenu.map((item,index,dataMenu)=>{
+                    return(
+                            <Link to={item.path}  key={index} className={classnames({
+                                            "menubar__content--button":true,
+                                            active: location.pathname === `${item.path}` })} >
+                                  <img className="menubar__content--button-img"
+                                      src={require(`../../configs/icons/${item.icon}`)} alt="dashboard"/>
+                                  <span>{item.title}</span>
+                            </Link>
+                          );}
+                    )
+            }
             <div className="menubar__content--button-dropdown" >
-              <Button className="menubar__content--button ">
-                <img className="menubar__content--button-img"
+              <Button className={classnames({
+                          "menubar__content--button":true,
+                          active: path  === "/home/setting" })} >
+                <img className="menubar__content--button-img1"
                       src={require('../../configs/icons/setting.png')} alt="setting"/>
                 Cài đặt hệ thống
                 <img className="menubar__content--button-drop "
                       src={require('../../configs/icons/drop.png')} alt="drop"/>
               </Button> 
               <div className="menubar__content--button-dropdown-list">
-                <a className="menubar__content--button-dropdown-list-item-top">Quản lí vai trò</a>
-                <a className="menubar__content--button-dropdown-list-item-center">Quản lí tài khoảng</a>
-                <a className="menubar__content--button-dropdown-list-item-bottom">Nhật kí người dùng</a>
+                <Link to={"/home/setting/role"} 
+                      className="menubar__content--button-dropdown-list-item-top">
+                      Quản lí vai trò
+                </Link>
+                <Link to={"/home/setting/account"} 
+                      className="menubar__content--button-dropdown-list-item-center">
+                      Quản lí tài khoản
+                </Link>
+                <Link to={"/home/setting/userhistory"} 
+                      className="menubar__content--button-dropdown-list-item-bottom">
+                      Nhật kí người dùng
+                </Link>
               </div>
             </div>
             
