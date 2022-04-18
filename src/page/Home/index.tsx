@@ -2,8 +2,9 @@ import React,{Children, useState} from 'react';
 import { Header, MenuBar } from '../../layout';
 import "./style.scss";
 import urlImage from '../../configs/images/LoginWallpaper.png';
-import { UserDetail,Dashboard, Device } from '../../components';
-import { Routes,Route,useNavigate, useLocation} from 'react-router-dom';
+import { UserDetail,Dashboard, Device, Service, Report } from '../../components';
+import { Routes,Route, useLocation} from 'react-router-dom';
+import { ProvideNumber } from '../../components/ProvideNumber';
 
 export interface IHomeProps {
 }
@@ -67,17 +68,17 @@ export function Home (props: IHomeProps) {
             children:"Danh sách dịch vụ >",
             children2:"Cập nhật"
         },
-        {   path : "/home/number",
+        {   path : "/home/providenumber",
             title: "Cấp số >",
             children:"Danh sách cấp số",
             children2:"" 
         },
-        {   path : "/home/number/add",
+        {   path : "/home/providenumber/add",
             title: "Cấp số >",
             children:"Danh sách cấp số > ",
             children2:"Cấp số mới" 
         },
-        {   path : "/home/number/detail",
+        {   path : "/home/providenumber/detail",
             title: "Cấp số >",
             children:"Danh sách cấp số >",
             children2:"Chi tiết" 
@@ -137,9 +138,12 @@ export function Home (props: IHomeProps) {
                 </div>   
                 <div className="home__container--right-content" >
                     <Routes>
-                        <Route path='userdetail'  element={<UserDetail/>}/>
-                        <Route path='dashboard'   element={<Dashboard/>} />
-                        <Route path='device'      element={<Device/>}    />
+                        <Route path='userdetail'          element={<UserDetail/>}       />
+                        <Route path='dashboard'           element={<Dashboard/>}        />
+                        <Route path='device/*'             element={<Device/>}           />
+                        <Route path='service'             element={<Service/>}          />
+                        <Route path='providenumber'       element={<ProvideNumber/>}    />
+                        <Route path='report'              element={<Report/>}           />
                     </Routes>
                 </div>  
 

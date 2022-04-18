@@ -23,7 +23,6 @@ export function Header (props: IHeaderProps) {
     nav("/home/userdetail");
   }
   const path = location.pathname.length;
-  console.log(path);
   return (
     <header className = "header">
         <section className = "header__left">

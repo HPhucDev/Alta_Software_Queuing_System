@@ -22,7 +22,7 @@ export function MenuBar (props: IMenuBarProps) {
         title: "Dịch vụ", 
         icon : "service.png"
     },
-    {   path : "/home/number",
+    {   path : "/home/providenumber",
         title: "Cấp số", 
         icon : "number.png"
     },
