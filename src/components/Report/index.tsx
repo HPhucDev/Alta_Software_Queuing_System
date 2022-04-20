@@ -3,6 +3,7 @@ import "./style.scss";
 import { useLocation} from 'react-router-dom';
 import { AddButton,TableData  } from '../index';
 import PaginatedItems from 'react-paginate';
+import { DatePickerTool } from '../DatePicker';
 
 
 export interface IReportProps {
@@ -26,6 +27,7 @@ export function Report (props: IReportProps) {
           <span className='report__header--title'>{titleList[index].title}</span>
         </div>
         <div className='report__tool'>
+          <DatePickerTool width='150px' padding='12px'/>
         </div>
         <div className='report__content'>
           <div className='report__content--table'>

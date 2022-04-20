@@ -10,6 +10,7 @@ export function SearchInput (props: ISearchInputProps) {
     const style = { width:`${props.width}`,"margin-left":`${props.left}`};
     const width = { width:`${props.width}`};
     const title = props.title;
+    
   return (
     <div className='searchinput'  style={style} >
         <div className='searchinput__title' > {title}</div>

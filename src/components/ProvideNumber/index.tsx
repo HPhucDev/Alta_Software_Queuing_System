@@ -5,6 +5,7 @@ import { DropDown } from '../index';
 import { SearchInput } from '../SearchInput';
 import { AddButton } from '../ButtonAdd';
 import PaginatedItems from 'react-paginate';
+import { DatePickerTool } from '../DatePicker';
 
 export interface IProvideNumberProps {
 }
@@ -75,7 +76,8 @@ export function ProvideNumber (props: IProvideNumberProps) {
           <DropDown width='154px' title={"Tên dịch vụ"} listMenu={serviceDropdown} />
           <DropDown width='154px' title={"Tình trạng"} listMenu={statusDropdown} />
           <DropDown width='154px' title={"Nguồn cấp"} listMenu={sourceDropdown} />
-          <SearchInput width='300px' left='94px' title={"Từ khóa"}/>
+          <DatePickerTool width='150px' padding='12px'/>
+          <SearchInput width='240px' left='24px' title={"Từ khóa"}/>
         </div>
         <div className='providenumber__content'>
           <div className='providenumber__content--table'>
@@ -86,7 +88,7 @@ export function ProvideNumber (props: IProvideNumberProps) {
           </div>
         </div>
         <div className='providenumber__footer'>
-          <PaginatedItems pageCount={10} className="device__footer--pagination" previousLabel={"<"}  nextLabel={">"}/>
+          <PaginatedItems pageCount={10} className="providenumber__footer--pagination" previousLabel={"<"}  nextLabel={">"}/>
         </div>
       </div>
     </div>

@@ -29,7 +29,6 @@ export function Device (props: IDeviceProps) {
   const index = titleList.findIndex(e => e.path === location.pathname)
   console.log(location.pathname)
 
- 
   return (
     <div className='device'>
       <div className='device__container'>

@@ -1,12 +1,14 @@
 import React,{useState} from 'react';
 import "./style.scss";
 import classnames from 'classnames';
+import {Link} from 'react-router-dom';
 
 export interface IStaticCardProps {
   title:string,
   icon:string,
   count:number,
   static:number,
+  href:string
 }
 
 export function StaticCard (props: IStaticCardProps) {
@@ -14,8 +16,9 @@ export function StaticCard (props: IStaticCardProps) {
   const icon = props.icon;
   const count = props.count;
   const staticNumber = props.static;
+  const href = props.href;
   return (
-    <div className='staticcard'>
+    <Link to={href} className='staticcard'>
         <div className='staticcard__title'>
             <div className='staticcard__title--icon'>
               <img src={require(`../../../configs/icons/${icon}.png`)}
@@ -41,6 +44,6 @@ export function StaticCard (props: IStaticCardProps) {
               <span>{Math.abs(staticNumber)}%</span>
           </div>
       </div>
-    </div>
+    </Link>
   );
 }

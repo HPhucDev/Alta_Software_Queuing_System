@@ -61,7 +61,7 @@ export function Home (props: IHomeProps) {
         {   path : "/home/service/detail",
             title: "Dịch vụ >", 
             children:"Danh sách dịch vụ >",
-            children2:"Cập nhật "
+            children2:"Chi tiết "
         },
         {   path : "/home/service/update",
             title: "Dịch vụ >", 
@@ -141,9 +141,9 @@ export function Home (props: IHomeProps) {
                         <Route path='userdetail'          element={<UserDetail/>}       />
                         <Route path='dashboard'           element={<Dashboard/>}        />
                         <Route path='device/*'             element={<Device/>}           />
-                        <Route path='service'             element={<Service/>}          />
-                        <Route path='providenumber'       element={<ProvideNumber/>}    />
-                        <Route path='report'              element={<Report/>}           />
+                        <Route path='service/*'             element={<Service/>}          />
+                        <Route path='providenumber/*'       element={<ProvideNumber/>}    />
+                        <Route path='report/*'              element={<Report/>}           />
                     </Routes>
                 </div>  
 

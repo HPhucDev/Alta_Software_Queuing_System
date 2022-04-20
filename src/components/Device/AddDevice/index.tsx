@@ -36,6 +36,7 @@ export function AddDevice (props: IAddDeviceProps) {
         setServiceState(newService);  
         console.log(serviceState)
     }
+    
     const handleCancelButtonClick=()=>{
         nav("/home/device")
     }

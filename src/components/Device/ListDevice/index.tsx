@@ -30,10 +30,10 @@ export function ListDevice (props: IListDeviceProps) {
       ]
   return (
     <div className='devicelist'>
-      <div className='devicelist__tool'>
+          <div className='devicelist__tool'>
             <DropDown width='300px' title={"Trạng thái hoạt động"} listMenu={statusDropdown} />
             <DropDown width='300px' title={"Trạng thái kết nối"} listMenu={connectDropdown} />
-            <SearchInput width='300px' left='94px' title={"Từ khóa"}/>
+            <SearchInput width='300px' left='164px' title={"Từ khóa"}/>
           </div>
           <div className='devicelist__content'>
             <div className='devicelist__content--table'>

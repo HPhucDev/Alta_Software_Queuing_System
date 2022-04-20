@@ -184,10 +184,10 @@ export function Dashboard (props: IDashboardProps) {
           </div>
           <div className='dashboard__container--left-content'>
             <div className='dashboard__container--left-content-card'>
-              <StaticCard title="Số thứ tự đã cấp" icon="sttdacap" count={4.221} static={32.41}/>
-              <StaticCard title="Số thứ tự đã sử dụng" icon="sttdadung" count={3.721} static={-32.41}/>
-              <StaticCard title="Số thứ tự đang chờ" icon="sttdangcho" count={468} static={56.41}/>
-              <StaticCard title="Số thứ tự đã bỏ qua" icon="sttboqua" count={32} static={-22.41}/>
+              <StaticCard href="/home/providenumber" title="Số thứ tự đã cấp" icon="sttdacap" count={4.221} static={32.41}/>
+              <StaticCard href="/home/providenumber" title="Số thứ tự đã sử dụng" icon="sttdadung" count={3.721} static={-32.41}/>
+              <StaticCard href="/home/providenumber" title="Số thứ tự đang chờ" icon="sttdangcho" count={468} static={56.41}/>
+              <StaticCard href="/home/providenumber" title="Số thứ tự đã bỏ qua" icon="sttboqua" count={32} static={-22.41}/>
             </div>
             <div className='dashboard__container--left-content-chart'>
               <div className='dashboard__container--left-content-chart-header'>
