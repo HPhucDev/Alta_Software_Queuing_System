@@ -4,21 +4,27 @@ import "./style.scss";
 export interface IDropDownProps {
     width:string,
     title:string,
+    initialLabel:{
+        label:string,
+        value:string
+    },
     listMenu:{
         label:string,
         value:string
-    }[]
+    }[],
+    getValue:(value:number)=>void
 }
 
 export function DropDown (props: IDropDownProps) {
     const width = { width:`${props.width}`}
     const title = props.title;
     const listMenu = props.listMenu;
-    const [itemShow,setItemShow]= useState(listMenu[0]);
-
+    const [itemShow,setItemShow]= useState(props.initialLabel);
     const itemClick=(index:number)=>{
         setItemShow(listMenu[index])
+        props.getValue(index)
     }
+
 
     return (
         <div className='dropdown' style={width}>

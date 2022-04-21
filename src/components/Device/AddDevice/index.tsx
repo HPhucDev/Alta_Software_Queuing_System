@@ -48,6 +48,9 @@ export function AddDevice (props: IAddDeviceProps) {
           value:"displaycounter"
         }
       ]
+      const getStyleValueDropdown=(value:number)=>{
+        console.log(value)
+      }
   return (
     <div className='adddevice'>
         <Form className='adddevice__form'>
@@ -83,7 +86,7 @@ export function AddDevice (props: IAddDeviceProps) {
                                 <p>Loại thiết bị :</p>
                                 <span>*</span>
                             </div>
-                            <DropDown width='540px' title="" listMenu={styleDeviceDropdown} />
+                            <DropDown width='540px' title="" listMenu={styleDeviceDropdown} initialLabel={styleDeviceDropdown[0]} getValue={(value)=>getStyleValueDropdown(value)}/>
                         </Form.Item>
                         <Form.Item className="adddevice__form--panel-item-5">
                             <div className="adddevice__form--panel-item-title">

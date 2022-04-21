@@ -18,10 +18,14 @@ export function Listservice (props: IListserviceProps) {
           value:"deactive"
         }
       ]
+      const getStatusValueDropdown=(value:number)=>{
+        console.log(value)
+      }
   return (
     <div className='listservice'>
          <div className='listservice__tool'>
-          <DropDown width='300px' title={"Trạng thái hoạt động"} listMenu={statusDropdown} />
+          <DropDown width='300px' title={"Trạng thái hoạt động"} listMenu={statusDropdown} initialLabel={statusDropdown[0]}
+          getValue={(value)=>getStatusValueDropdown(value)} />
           <DatePickerTool width='150px' padding='12px'/>
           <SearchInput width='300px' left='168px' title={"Từ khóa"}/>
         </div>

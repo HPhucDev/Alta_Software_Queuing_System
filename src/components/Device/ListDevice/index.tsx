@@ -28,11 +28,17 @@ export function ListDevice (props: IListDeviceProps) {
           value:"disconnect"
         }
       ]
+      const getStatusValueDropdown=(value:number)=>{
+        console.log(value)
+      }
+      const getConnectValueDropdown=(value:number)=>{
+        console.log(value)
+      }
   return (
     <div className='devicelist'>
           <div className='devicelist__tool'>
-            <DropDown width='300px' title={"Trạng thái hoạt động"} listMenu={statusDropdown} />
-            <DropDown width='300px' title={"Trạng thái kết nối"} listMenu={connectDropdown} />
+            <DropDown width='300px' title={"Trạng thái hoạt động"} listMenu={statusDropdown} initialLabel={statusDropdown[0]} getValue={(value)=>getStatusValueDropdown(value)}/>
+            <DropDown width='300px' title={"Trạng thái kết nối"} listMenu={connectDropdown}  initialLabel={connectDropdown[0]}getValue={(value)=>getConnectValueDropdown(value)}/>
             <SearchInput width='300px' left='164px' title={"Từ khóa"}/>
           </div>
           <div className='devicelist__content'>

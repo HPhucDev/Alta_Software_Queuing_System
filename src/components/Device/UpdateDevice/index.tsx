@@ -47,6 +47,9 @@ export function UpdateDevice (props: IUpdateDeviceProps) {
           value:"displaycounter"
         }
       ]
+      const getStyleValueDropdown=(value:number)=>{
+        console.log(value)
+      }
   return (
     <div className='updatedevice'>
         <Form className='updatedevice__form'>
@@ -83,7 +86,7 @@ export function UpdateDevice (props: IUpdateDeviceProps) {
                                 <span>*</span>
                             </div>
                             {/* <Input  placeholder={"Kiosk"} className="updatedevice__form--panel-item-input"/> */}
-                            <DropDown width='540px' title="" listMenu={styleDeviceDropdown} />
+                            <DropDown width='540px' title="" listMenu={styleDeviceDropdown} initialLabel={styleDeviceDropdown[0]} getValue={(value)=>getStyleValueDropdown(value)} />
                         </Form.Item>
                         <Form.Item className="updatedevice__form--panel-item-5">
                             <div className="updatedevice__form--panel-item-title">

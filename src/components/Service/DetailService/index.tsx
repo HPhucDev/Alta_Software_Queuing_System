@@ -24,6 +24,9 @@ export function DetailService (props: IDetailServiceProps) {
           value:"off"
         }
       ]
+      const getStatusValueDropdown=(value:number)=>{
+        console.log(value)
+      }
   return (
     <div className='detailservice'>
         <div className='detailservice__container'> 
@@ -68,7 +71,7 @@ export function DetailService (props: IDetailServiceProps) {
             <section className='detailservice__container--center'>
                 <div className='detailservice__container--center-content'>
                     <div className='detailservice__container--center-content-tool'>
-                        <DropDown title='Trạng thái' width='160px' listMenu={statusDropdown}/>
+                        <DropDown title='Trạng thái' width='160px' listMenu={statusDropdown} initialLabel={statusDropdown[0]} getValue={(value)=>getStatusValueDropdown(value)}/>
                         <div className='detailservice__container--center-content-tool-datepicker'>
                             <DatePickerTool width='130px' padding='4px'/>
                         </div>

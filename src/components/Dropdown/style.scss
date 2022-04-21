@@ -69,8 +69,8 @@
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
         justify-content: center;
+        overflow-y: scroll;
         &--content{
-            
             display: grid;
             padding-top: 8px;
             padding-bottom: 8px;
@@ -84,6 +84,11 @@
                 &-title{
                     @extend .dropdown__button--title;
                     margin-left:6px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #282739;
                 }
                 &:hover{
                     background: #FFF2E7;
