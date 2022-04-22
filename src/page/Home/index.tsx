@@ -5,6 +5,7 @@ import urlImage from '../../configs/images/LoginWallpaper.png';
 import { UserDetail,Dashboard, Device, Service, Report } from '../../components';
 import { Routes,Route, useLocation} from 'react-router-dom';
 import { ProvideNumber } from '../../components/ProvideNumber';
+import { Setting } from '../../components/Setting';
 
 export interface IHomeProps {
 }
@@ -138,12 +139,13 @@ export function Home (props: IHomeProps) {
                 </div>   
                 <div className="home__container--right-content" >
                     <Routes>
-                        <Route path='userdetail'          element={<UserDetail/>}       />
-                        <Route path='dashboard'           element={<Dashboard/>}        />
-                        <Route path='device/*'             element={<Device/>}           />
-                        <Route path='service/*'             element={<Service/>}          />
-                        <Route path='providenumber/*'       element={<ProvideNumber/>}    />
-                        <Route path='report/*'              element={<Report/>}           />
+                        <Route path='userdetail'            element={<UserDetail/>}         />
+                        <Route path='dashboard'             element={<Dashboard/>}          />
+                        <Route path='device/*'              element={<Device/>}             />
+                        <Route path='service/*'             element={<Service/>}            />
+                        <Route path='providenumber/*'       element={<ProvideNumber/>}      />
+                        <Route path='report/*'              element={<Report/>}             />
+                        <Route path='setting/*'             element={<Setting/>}            />
                     </Routes>
                 </div>  
 

@@ -44,7 +44,6 @@ export function ListProvideNumber (props: IListProvideNumberProps) {
         { label:"Hệ thống",
           value:"system"
         },
-        
       ]
       const getServiceValueDropdown=(value:number)=>{
           console.log(value)

@@ -3,6 +3,7 @@ import "./style.scss";
 import {Routes,Route, useLocation} from 'react-router-dom';
 import { ListProvideNumber } from './ListProvideNumber';
 import { ProvideNewNumber } from './ProvideNewNumber';
+import { DetailProvideNumber } from './DetailProvideNumber';
 
 
 export interface IProvideNumberProps {
@@ -35,8 +36,8 @@ export function ProvideNumber (props: IProvideNumberProps) {
             <Routes>
                 <Route path=''                 element={<ListProvideNumber/>}            />
                 <Route path='add'              element={<ProvideNewNumber/>}             />
-                {/* <Route path='detail'           element={<DetailDevice/>}          />
-                <Route path='update'           element={<UpdateDevice/>}          /> */}
+                <Route path='detail'           element={<DetailProvideNumber/>}          />
+                {/* <Route path='update'           element={<UpdateDevice/>}          /> */}
             </Routes>
         </div>
      

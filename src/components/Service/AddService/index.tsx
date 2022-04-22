@@ -79,7 +79,6 @@ export function AddService (props: IAddServiceProps) {
                                 <Input  placeholder={"0001"} className="addservice__form--service-checkbox-content-input"/>
                             </div>
                         </div>
-                        
                     </Form.Item>
                     <Form.Item
                     name="reseteveryday"

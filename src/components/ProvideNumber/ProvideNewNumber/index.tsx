@@ -36,6 +36,7 @@ export function ProvideNewNumber (props: IProvideNewNumberProps) {
     const [active,setActive]=useState(false)
 
     const getServiceValueDropdown=(value:number)=>{
+        if(value)
         setService(serviceDropdown[value]);
     }
 
