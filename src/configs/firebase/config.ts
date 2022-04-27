@@ -1,13 +1,17 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { getFirestore } from 'firebase/firestore';
 
-firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+const app = firebase.initializeApp({
+  apiKey: "AIzaSyD6DQyOSlescoSmV7ztOuzYeVnqC7OC_lo",
+  authDomain: "alta-software-queuing-system.firebaseapp.com",
+  databaseURL: "https://alta-software-queuing-system-default-rtdb.firebaseio.com",
+  projectId: "alta-software-queuing-system",
+  storageBucket: "alta-software-queuing-system.appspot.com",
+  messagingSenderId: "963625055351",
+  appId: "1:963625055351:web:2f21db44161be6432a4272",
+  measurementId: "G-2C025Z4Y18"
 });
-export default firebase;
+export const db = getFirestore(app);
+export default app;

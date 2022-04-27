@@ -24,8 +24,6 @@ export function DropDown (props: IDropDownProps) {
         setItemShow(listMenu[index])
         props.getValue(index)
     }
-
-
     return (
         <div className='dropdown' style={width}>
             <div className='dropdown__header'>
